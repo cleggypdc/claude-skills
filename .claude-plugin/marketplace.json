@@ -1,0 +1,11 @@
+{
+  "name": "cleggypdc-skills",
+  "owner": { "name": "Paul Clegg" },
+  "plugins": [
+    {
+      "name": "prospecting-crm",
+      "source": "./",
+      "description": "Evidence-first ICP prospecting for any sector, plus a local Docker CRM with a JSON API."
+    }
+  ]
+}

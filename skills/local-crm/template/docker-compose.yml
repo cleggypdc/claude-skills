@@ -1,0 +1,17 @@
+services:
+  crm:
+    build: .
+    image: ${CRM_NAME:-crm}
+    container_name: ${CRM_NAME:-crm}
+    # Run as your user so files in ./data stay owned by you, not root.
+    user: "${UID:-1000}:${GID:-1000}"
+    ports:
+      - "127.0.0.1:${CRM_PORT:-8765}:8765"
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config:ro
+    environment:
+      TZ: ${TZ:-Europe/London}
+      # Enables the JSON API at /api.php. Set CRM_API_TOKEN in .env next to this file.
+      CRM_API_TOKEN: ${CRM_API_TOKEN:-}
+    restart: unless-stopped

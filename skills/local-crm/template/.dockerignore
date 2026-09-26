@@ -1,0 +1,4 @@
+data/crm.db*
+*.zip
+.git
+.env
