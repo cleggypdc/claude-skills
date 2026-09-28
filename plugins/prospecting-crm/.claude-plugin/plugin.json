@@ -1,0 +1,16 @@
+{
+  "name": "prospecting-crm",
+  "version": "0.2.0",
+  "description": "Evidence-first ICP prospecting for any sector, plus a local Docker CRM (PHP + SQLite) with a JSON API to hold the results.",
+  "author": {
+    "name": "Paul Clegg"
+  },
+  "keywords": [
+    "icp",
+    "prospecting",
+    "outbound",
+    "crm",
+    "sqlite",
+    "docker"
+  ]
+}

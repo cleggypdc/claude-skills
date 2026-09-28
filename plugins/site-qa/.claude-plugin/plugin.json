@@ -1,0 +1,17 @@
+{
+  "name": "site-qa",
+  "version": "0.1.0",
+  "description": "Site QA and slop audit: broken and hot-linked images, gutter drift, cross-page inconsistency, meta hygiene, leaked secrets and AI/agent comments in shipped HTML/JS, and AI 'slop' design tells.",
+  "author": {
+    "name": "Paul Clegg"
+  },
+  "keywords": [
+    "qa",
+    "audit",
+    "security",
+    "secrets",
+    "accessibility",
+    "design",
+    "seo"
+  ]
+}
