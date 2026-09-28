@@ -1,7 +1,21 @@
 {
   "name": "prospecting-crm",
-  "version": "0.1.0",
-  "description": "Evidence-first ICP prospecting for any sector, plus a local Docker CRM (PHP + SQLite) with a JSON API to hold the results.",
-  "author": { "name": "Paul Clegg" },
-  "keywords": ["icp", "prospecting", "outbound", "crm", "sqlite", "docker"]
+  "version": "0.2.0",
+  "description": "Evidence-first ICP prospecting for any sector, a local Docker CRM (PHP + SQLite) with a JSON API to hold the results, and a site QA audit for broken UI, gutter drift, leaked secrets/agent comments and AI slop.",
+  "author": {
+    "name": "Paul Clegg"
+  },
+  "keywords": [
+    "icp",
+    "prospecting",
+    "outbound",
+    "crm",
+    "sqlite",
+    "docker",
+    "qa",
+    "audit",
+    "security",
+    "accessibility",
+    "design"
+  ]
 }
