@@ -1,4 +1,4 @@
-data/crm.db*
+**/data/crm.db*
 .env
 *.zip
 .DS_Store

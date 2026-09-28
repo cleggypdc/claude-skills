@@ -1,11 +1,21 @@
 {
   "name": "cleggypdc-skills",
-  "owner": { "name": "Paul Clegg" },
+  "owner": {
+    "name": "Paul Clegg"
+  },
+  "metadata": {
+    "description": "Paul Clegg's Claude skills: evidence-first prospecting with a local CRM, and a site QA and slop audit."
+  },
   "plugins": [
     {
       "name": "prospecting-crm",
-      "source": "./",
+      "source": "./plugins/prospecting-crm",
       "description": "Evidence-first ICP prospecting for any sector, plus a local Docker CRM with a JSON API."
+    },
+    {
+      "name": "site-qa",
+      "source": "./plugins/site-qa",
+      "description": "Audit a website for what functional QA misses: broken UI, gutter drift, inconsistency, meta, leaked secrets and agent comments, and AI slop."
     }
   ]
 }
