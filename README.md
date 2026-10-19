@@ -18,6 +18,9 @@ Skills for Claude (Claude Code, Cowork, claude.ai), kept in one place and groupe
 | Skill | What it does |
 |---|---|
 | [`slop-ui-audit`](plugins/site-qa/skills/slop-ui-audit/SKILL.md) | Audit a website for what functional QA misses: broken and hot-linked images, gutter drift between sections, cross-page inconsistency, meta hygiene, AI/agent comments and secrets shipped in HTML/JS/source maps, and AI 'slop' design tells. Ships a no-dependency leak crawler and an in-page scanner in [`scripts/`](plugins/site-qa/skills/slop-ui-audit/scripts/). |
+| [`content-structure-audit`](plugins/site-qa/skills/content-structure-audit/SKILL.md) | Audit what search and AI crawlers read: semantic HTML, meta, JSON-LD entity graph, llms.txt and AI-bot access, answer-first openings, citations, bylines and dates, boilerplate, cannibalisation and prose slop. Includes a Wayback Machine survival analysis to see which content strategies a site kept and which it deleted. No-dependency scripts in [`scripts/`](plugins/site-qa/skills/content-structure-audit/scripts/). |
+
+`slop-ui-audit` covers what a visitor sees; `content-structure-audit` covers what a crawler reads. Run both before a launch.
 
 ## Install
 
@@ -49,6 +52,8 @@ plugins/
     skills/
       slop-ui-audit/SKILL.md
       slop-ui-audit/scripts/         leak-crawl.mjs, site-qa-scan.js, qa-run.js
+      content-structure-audit/SKILL.md
+      content-structure-audit/scripts/  content-audit.mjs, wayback-survival.mjs
 ```
 
 To add a group, create `plugins/<name>/` with its own `.claude-plugin/plugin.json` (the `name` must match its marketplace entry) and a flat `skills/` folder, then add an entry to `.claude-plugin/marketplace.json` with `"source": "./plugins/<name>"`.
@@ -68,4 +73,8 @@ See [its README](plugins/prospecting-crm/skills/local-crm/template/README.md) fo
 cd plugins/site-qa/skills/slop-ui-audit/scripts
 node leak-crawl.mjs https://your-site.example --depth 2          # secrets, agent comments, source maps; add --probe only on sites you own
 npm i playwright && node qa-run.js https://your-site.example/ '' pricing about   # per-page scan + screenshots + cross-page diff
+
+cd ../../content-structure-audit/scripts
+node content-audit.mjs https://your-site.example --max 400                        # raw-HTML structure, schema, meta, copy
+node wayback-survival.mjs competitor.example                                      # what they kept vs deleted over the years
 ```

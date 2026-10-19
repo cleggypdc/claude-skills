@@ -91,7 +91,7 @@ What the scan returns:
   - fixed elements covering content (full-screen overlay hosts such as canvases and third-party widgets are flagged for a screenshot check);
   - WCAG contrast failures grouped by colour pair;
   - text over images (needs an eye check).
-- **`checks.meta`:** title and description length and duplicates, meta keywords (stuffing), og/twitter cards, canonical, robots noindex, lang, h1 count, generator leak, JSON-LD parse errors and duplication, head weight. For site-wide meta patterns (e.g. which pages lack a canonical), loop the crawler's page list with `curl`.
+- **`checks.meta`:** title and description length and duplicates, meta keywords (stuffing), og/twitter cards, canonical, robots noindex, lang, h1 count, generator leak, JSON-LD parse errors and duplication, head weight. For site-wide meta, schema, semantic HTML and copy patterns, run the sibling `content-structure-audit` skill (`content-audit.mjs`) rather than looping `curl`.
 - **`checks.leakage`:** the same comment and secret detectors as the crawler, but on the rendered DOM, plus builder fingerprints.
 - **`checks.consistency`** plus `fingerprint`: CTA label variants, distinct button styles, radius scale, font families. The runner diffs body font, headings, gutter, radii and CTA styles across pages.
 - **`slopLeads`:** raw signals for the 10 tells (no score).

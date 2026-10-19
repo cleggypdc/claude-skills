@@ -1,17 +1,23 @@
 {
   "name": "site-qa",
-  "version": "0.1.0",
-  "description": "Site QA and slop audit: broken and hot-linked images, gutter drift, cross-page inconsistency, meta hygiene, leaked secrets and AI/agent comments in shipped HTML/JS, and AI 'slop' design tells.",
+  "version": "0.2.0",
+  "description": "Site QA, slop and content structure audits: broken UI, gutter drift, inconsistency, leaked secrets and agent comments, AI slop design tells, plus semantic HTML, schema/entity graph, llms.txt, answer-first copy, citations and Wayback survival analysis.",
   "author": {
     "name": "Paul Clegg"
   },
   "keywords": [
-    "qa",
-    "audit",
-    "security",
-    "secrets",
     "accessibility",
+    "aeo",
+    "audit",
+    "content",
     "design",
-    "seo"
+    "geo",
+    "qa",
+    "schema",
+    "secrets",
+    "security",
+    "semantic-html",
+    "seo",
+    "wayback"
   ]
 }
