@@ -18,9 +18,10 @@ Skills for Claude (Claude Code, Cowork, claude.ai), kept in one place and groupe
 | Skill | What it does |
 |---|---|
 | [`slop-ui-audit`](plugins/site-qa/skills/slop-ui-audit/SKILL.md) | Audit a website for what functional QA misses: broken and hot-linked images, gutter drift between sections, cross-page inconsistency, meta hygiene, AI/agent comments and secrets shipped in HTML/JS/source maps, and AI 'slop' design tells. Ships a no-dependency leak crawler and an in-page scanner in [`scripts/`](plugins/site-qa/skills/slop-ui-audit/scripts/). |
+| [`security-signals-audit`](plugins/site-qa/skills/security-signals-audit/SKILL.md) | Check whether a site shows the outward signs of good security posture: HTTPS and HSTS, CSP quality and other headers, cookie flags, leaked secrets and source maps, known-vulnerable JS libraries (retire.js), SRI, security.txt, trackers before consent, SPF/DMARC/CAA. Passive by default, with owner-only probes for exposed files, directory listings and staging hosts. Reports signals, never "secure". Script in [`scripts/`](plugins/site-qa/skills/security-signals-audit/scripts/). |
 | [`content-structure-audit`](plugins/site-qa/skills/content-structure-audit/SKILL.md) | Audit what search and AI crawlers read: semantic HTML, meta, JSON-LD entity graph, llms.txt and AI-bot access, answer-first openings, citations, bylines and dates, boilerplate, cannibalisation and prose slop. Includes a Wayback Machine survival analysis to see which content strategies a site kept and which it deleted. No-dependency scripts in [`scripts/`](plugins/site-qa/skills/content-structure-audit/scripts/). |
 
-`slop-ui-audit` covers what a visitor sees; `content-structure-audit` covers what a crawler reads. Run both before a launch.
+`slop-ui-audit` covers what a visitor sees, `content-structure-audit` what a crawler reads, and `security-signals-audit` what the site's security posture looks like from outside. Run all three before a launch.
 
 ## Install
 
@@ -54,6 +55,8 @@ plugins/
       slop-ui-audit/scripts/         leak-crawl.mjs, site-qa-scan.js, qa-run.js
       content-structure-audit/SKILL.md
       content-structure-audit/scripts/  content-audit.mjs, wayback-survival.mjs
+      security-signals-audit/SKILL.md
+      security-signals-audit/scripts/   security-signals.mjs
 ```
 
 To add a group, create `plugins/<name>/` with its own `.claude-plugin/plugin.json` (the `name` must match its marketplace entry) and a flat `skills/` folder, then add an entry to `.claude-plugin/marketplace.json` with `"source": "./plugins/<name>"`.
@@ -77,4 +80,7 @@ npm i playwright && node qa-run.js https://your-site.example/ '' pricing about  
 cd ../../content-structure-audit/scripts
 node content-audit.mjs https://your-site.example --max 400                        # raw-HTML structure, schema, meta, copy
 node wayback-survival.mjs competitor.example                                      # what they kept vs deleted over the years
+
+cd ../../security-signals-audit/scripts
+node security-signals.mjs https://your-site.example                               # passive security posture signals; add --probe only on sites you own
 ```
