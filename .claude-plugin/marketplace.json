@@ -4,7 +4,7 @@
     "name": "Paul Clegg"
   },
   "metadata": {
-    "description": "Paul Clegg's Claude skills: evidence-first prospecting with a local CRM, and site QA, slop and content structure audits."
+    "description": "Paul Clegg's Claude skills: evidence-first prospecting with a local CRM, and site QA, slop, content structure and security signals audits."
   },
   "plugins": [
     {
@@ -15,7 +15,7 @@
     {
       "name": "site-qa",
       "source": "./plugins/site-qa",
-      "description": "Audit a website for what functional QA misses (broken UI, gutter drift, inconsistency, leaked secrets and agent comments, AI slop) and what crawlers read (semantic HTML, schema, llms.txt, answer-first copy, citations, Wayback survival)."
+      "description": "Audit a website for what functional QA misses (broken UI, gutter drift, inconsistency, leaked secrets, AI slop), what crawlers read (semantic HTML, schema, llms.txt, answer-first copy, citations, Wayback survival) and its outward security posture (headers, CSP, cookies, source maps, vulnerable libraries, DMARC)."
     }
   ]
 }

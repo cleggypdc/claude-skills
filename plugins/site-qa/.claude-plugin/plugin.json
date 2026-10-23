@@ -1,7 +1,7 @@
 {
   "name": "site-qa",
-  "version": "0.2.0",
-  "description": "Site QA, slop and content structure audits: broken UI, gutter drift, inconsistency, leaked secrets and agent comments, AI slop design tells, plus semantic HTML, schema/entity graph, llms.txt, answer-first copy, citations and Wayback survival analysis.",
+  "version": "0.3.0",
+  "description": "Site QA, slop, content structure and security signals audits: broken UI, gutter drift, inconsistency, leaked secrets and agent comments, AI slop design tells, semantic HTML, schema/entity graph, llms.txt, answer-first copy, citations, Wayback survival, and outward security posture (headers, CSP, cookies, source maps, vulnerable libraries, DMARC).",
   "author": {
     "name": "Paul Clegg"
   },
@@ -10,12 +10,16 @@
     "aeo",
     "audit",
     "content",
+    "csp",
     "design",
+    "dmarc",
     "geo",
+    "hsts",
     "qa",
     "schema",
     "secrets",
     "security",
+    "security-headers",
     "semantic-html",
     "seo",
     "wayback"
